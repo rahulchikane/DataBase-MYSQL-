@@ -1,0 +1,52 @@
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| db                 |
+| information_schema |
+| library            |
+| mysql              |
+| performance_schema |
+| rahul              |
+| rahulc             |
+| rahulch            |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+11 rows in set (0.00 sec)
+
+mysql> USE LIBRARY;
+Database changed
+mysql> SELECT* FROM MEMBERS;
++-----------+--------------+----------------+---------------+-----------------+
+| MEMBER_ID | MEMBER_NAME  | MEMBER_ADDRESS | ACC_OPEN_DATE | MEMBERSHIP_TYPE |
++-----------+--------------+----------------+---------------+-----------------+
+|         1 | Richa Sharma | Pune           | 2010-10-05    | Lifetime        |
+|         2 | Garima Sen   | Pune           | 2004-12-20    | Annual          |
++-----------+--------------+----------------+---------------+-----------------+
+2 rows in set (0.20 sec)
+
+mysql> SELECT* FROM BOOKS;
++---------+-----------------------+---------------+------+----------+
+| BOOK_NO | BOOK_NAME             | AUTHOR_NAME   | COST | CATEGORY |
++---------+-----------------------+---------------+------+----------+
+|     101 | Let us C              | Denis Ritchie |  450 | System   |
+|     102 | Oracle ? Complete Ref | Loni          |  550 | Databas  |
+|     103 | Mastering SQL         | Loni          |  250 | Database |
+|     104 | PL SQL-Ref            | ScottUrman    |  750 | Database |
++---------+-----------------------+---------------+------+----------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT* FROM ISSUE;
++--------------+---------+-----------+------------+-------------+
+| LIB_ISSUE_ID | BOOK_NO | MEMBER_ID | ISSUE_DATE | RETURN_DATE |
++--------------+---------+-----------+------------+-------------+
+|         7001 |     101 |         1 | 2010-12-06 | NULL        |
+|         7002 |     102 |         2 | 2025-12-06 | NULL        |
+|         7003 |     104 |         1 | 2015-01-06 | NULL        |
+|         7004 |     101 |         1 | 2004-07-06 | NULL        |
+|         7005 |     104 |         2 | 2015-11-06 | NULL        |
+|         7006 |     101 |         3 | 2018-02-06 | NULL        |
++--------------+---------+-----------+------------+-------------+
+6 rows in set (0.00 sec)

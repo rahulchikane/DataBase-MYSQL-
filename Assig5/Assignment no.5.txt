@@ -1,0 +1,101 @@
+create database Emp3;
+
+use emp3;
+
+Create table EMP ( EMPNO numeric(4) not null, ENAME varchar(30) not null, JOB varchar(10), MGR numeric(4), HIREDATE date, SAL numeric(7,2), DEPTNO numeric(2) ); 
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DEPTNO ) values(1000,  'Raj' , 'SALESMAN', 1003,  '2020-02-18', 600,  30) ;
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DEPTNO ) values(1001,  'Riya' , 'SALESMAN', 1003,  '2018-02-18', 600,  30) ;
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DEPTNO ) values(1002 , 'Shaym', 'SALESMAN',1003 , '2013-02-18',  750,  30 );
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DEPTNO ) values(1004,  'roshni', 'ANALYST', 1006 , '2001-02-18', 3000,  10);
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DEPTNO ) values(1005 , 'Sachin', 'ANALYST', 1006 ,  '2019-02-18', 3000, 10 );
+Insert into EMP (EMPNO ,ENAME, JOB, MGR, HIREDATE, SAL, DEPTNO ) values(1006,  'Pooja',  'MANAGER'  ,     null    , '2000-02-18' ,6000, 10); 
+Create table dept (dno numeric(4) not null, dname varchar(10) not null,area varchar(30));
+Insert into dept(dno,dname,area) values(10,'Store','Mumbai');
+Insert into dept(dno,dname,area) values(20,'Purchase','Mumbai');
+Insert into dept(dno,dname,area) values(30,'Store', 'Delhi');
+Insert into dept(dno,dname,area) values(40,'Marketing','Pune');
+Insert into dept(dno,dname,area) values(50,'Finance','Delhi');
+Insert into dept(dno,dname,area) values(60,'Accounts','Mumbai');
+DELIMITER $$
+CREATE  PROCEDURE SP1(IN VAL1 INT,IN VAL2 INT)
+BEGIN
+SELECT VAL1+VAL2;
+SELECT VAL1-VAL2;
+SELECT VAL1*VAL2;
+SELECT VAL1/VAL2;
+END$$
+DROP PROCEDURE SP1;
+CALL SP1(10,20);
+=================================================
+
+DELIMITER $$
+CREATE PROCEDURE SP_2(INOUT STR VARCHAR(10))
+BEGIN
+SET STR=(SELECT REVERSE(STR));
+END $$
+SET  @STR ='DATABASE';
+CALL SP_2(@STR);
+select @STR;
+============================================================
+
+DELIMITER $$
+CREATE PROCEDURE SP_3()
+BEGIN
+SELECT EMPNO,ENAME,SAL FROM EMP ORDER BY SAL DESC LIMIT 5;
+END $$
+CALL SP_3;
+===============================================================
+
+DELIMITER $$
+CREATE PROCEDURE SP_4()
+BEGIN
+CREATE TABLE EMP_TEST(EMP_ID INT,ENAME VARCHAR(10),EJINING_DATE DATE);
+END $$
+CALL SP_4;
+================================================================
+
+delimiter $$
+CREATE PROCEDURE SP_5(IN X INT,IN Y VARCHAR(10),IN Z VARCHAR(10))
+BEGIN
+INSERT INTO DEPT VALUES (X,Y,Z);
+END $$
+CALL SP_5(60,'EDUCATION','PUNE');
+SELECT * FROM DEPT;  
+===================================================================
+
+DELIMITER $$
+CREATE PROCEDURE SP_6(INOUT NUM INT,OUT SQR INT,OUT CUBE INT )
+BEGIN
+DECLARE NUM1 INT;
+SET NUM1=NUM;
+SELECT NUM , POWER(NUM,2) AS SQURE,POWER(NUM,3) AS CUBE INTO NUM,SQR,CUBE;
+END $$
+
+
+SET @NUM=2;
+CALL SP_6(@NUM,@SQR,@CUBE1);
+SELECT @NUM,@SQR,@CUBE1;
+====================================================================
+     
+DELIMITER $$
+CREATE PROCEDURE SP_7(OUT ANS INT)
+BEGIN
+DECLARE NUM INT;
+SET NUM=2;
+SELECT NUM INTO ANS;
+END $$
+
+
+CALL SP_7(@ANS);
+SELECT @ANS;
+=========================================================================
+
+delimiter $$
+CREATE PROCEDURE SP_8(IN X INT,OUT STR VARCHAR(50))
+BEGIN
+SELECT concat(E.ENAME,' IS FROM ',D.DNAME) INTO STR  FROM EMP E INNER JOIN DEPT D ON D.DNO=E.DEPTNO WHERE E.DEPTNO=X AND E.EMPNO=1004;
+END $$
+
+CALL SP_8(10,@STR);
+SELECT @STR;
+===========================================================================================

@@ -1,0 +1,109 @@
+mysql> CREATE TABLE EMP(SAL FLOAT(7,3));
+Query OK, 0 rows affected, 1 warning (2.22 sec)
+
+mysql> INSERT INTO EMP VALUE(1234.567);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> INSERT INTO EMP VALUE(1530.019);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> INSERT INTO EMP VALUE(1652.786);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO EMP VALUE(1775.156);
+Query OK, 1 row affected (0.18 sec)
+==========================
+PERFORM
+1).ROUND
+mysql> SELECT ROUND(1234.56) AS RoundValue;
++------------+
+| RoundValue |
++------------+
+|       1235 |
++------------+
+==========================
+2). TRUNCATE
+
+3).CEIL
+mysql> SELECT CEILING(1234.56) AS CeilValue;
++-----------+
+| CeilValue |
++-----------+
+|      1235 |
++-----------+
+1 row in set (0.00 sec)
+==========================
+4).FLOOR
+mysql> SELECT FLOOR(1234.56) AS FloorValue;
++------------+
+| FloorValue |
++------------+
+|       1234 |
++------------+
+1 row in set (0.00 sec)
+=========================
+5).SIGN
+mysql> SELECT SIGN(-15);
++-----------+
+| SIGN(-15) |
++-----------+
+|        -1 |
++-----------+
+==========================
+mysql> SELECT SQRT(121);
++-----------+
+| SQRT(121) |
++-----------+
+|        11 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SQRT(11);
++-----------------+
+| SQRT(11)        |
++-----------------+
+| 3.3166247903554 |
++-----------------+
+1 row in set (0.00 sec)
+==========================
+8)0POWER
+mysql> SELECT POWER(2, 41);
++---------------+
+| POWER(2, 41)  |
++---------------+
+| 2199023255552 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT POWER(2, 45);
++----------------+
+| POWER(2, 45)   |
++----------------+
+| 35184372088832 |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT POWER(2, 49);
++-----------------+
+| POWER(2, 49)    |
++-----------------+
+| 562949953421312 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT POWER(2, 59);
++----------------------+
+| POWER(2, 59)         |
++----------------------+
+| 5.764607523034235e17 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT POWER(2, 50);
++----------------------+
+| POWER(2, 50)         |
++----------------------+
+| 1.125899906842624e15 |
++----------------------+
+1 row in set (0.00 sec)
+==========================

@@ -1,0 +1,61 @@
+mysql> CREATE TABLE EMPLOYEE(EMPID INT PRIMARY KEY NOT NULL,EMPNAME CHAR(50));
+Query OK, 0 rows affected (1.98 sec)
+
+INSERT INTO EMPLOYEE VALUE(1,'AARAV');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUE(2,'JIYA');
+Query OK, 1 row affected (0.21 sec)
+
+mysql> SELECT * FROM EMPLOYEE;
++-------+---------+
+| EMPID | EMPNAME |
++-------+---------+
+|     1 | AARAV   |
+|     2 | JIYA    |
++-------+---------+
+=========================
+2).
+mysql> ALTER TABLE EMPLOYEE MODIFY COLUMN EMPNAME VARCHAR(50);
+Query OK, 3 rows affected (3.72 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM EMPLOYEE;
++-------+---------+
+| EMPID | EMPNAME |
++-------+---------+
+|     1 | AARAV   |
+|     2 | JIYA    |
+|     3 | SCOOT   |
++-------+---------+
+3 rows in set (0.09 sec)
+=========================
+3).
+mysql> INSERT INTO EMPLOYEE VALUE(3,'AK');
+Query OK, 1 row affected (0.16 sec)
+
+
+mysql> UPDATE EMPLOYEE SET EMPNAME='SCOOT' WHERE EMPID=3;
+
+Query OK, 1 row affected (0.12 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM EMPLOYEE;
++-------+---------+
+| EMPID | EMPNAME |
++-------+---------+
+|     1 | AARAV   |
+|     2 | JIYA    |
+|     3 | SCOOT   |
++-------+---------+
+3 rows in set (0.00 sec)
+=========================
+4).
+mysql> TRUNCATE TABLE EMPLOYEE;
+Query OK, 0 rows affected (1.99 sec)
+
+mysql> SELECT * FROM EMPLOYEE;
+Empty set (0.15 sec)
+
+
+

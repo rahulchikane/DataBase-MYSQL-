@@ -1,0 +1,53 @@
+1.
+mysql> SELECT TITLE FROM TITLES WHERE PRICE < 500;
++----------------+
+| TITLE          |
++----------------+
+| MASTERING EJB  |
+| JAVA COMP. REF |
+| PRO. VB.NET    |
++----------------+
+3 rows in set (0.00 sec)
+=======================================================================
+2).
+mysql> SELECT TITLE FROM TITLES WHERE PUBID >'0003-04-03';
++-------------------+
+| TITLE             |
++-------------------+
+| ASP.NET UNLEASHED |
++-------------------+
+1 row in set, 1 warning (0.00 sec)
+=======================================================================
+3).
+mysql> SELECT SNAME FROM SUBJECTS WHERE SUBID ='JAVA' OR SUBID = 'JEE';
++------------------------+
+| SNAME                  |
++------------------------+
+| JAVA LANGUAGE          |
+| JAVA ENTEPRISE EDITION |
++------------------------+
+2 rows in set (0.00 sec)
+=======================================================================
+4).
+mysql> SELECT ANAME FROM AUTHORS WHERE AUID > 103;
++-----------------+
+| ANAME           |
++-----------------+
+| STEPHEN WALTHER |
+| KEVIN LONEY     |
+| ED. ROMANS      |
++-----------------+
+3 rows in set (0.05 sec)
+=======================================================================
+5).
+mysql> SELECT* FROM TITLES WHERE TITLEID =1001 OR PRICE>400;
++---------+----------------------+-------+-------+------------+-------+-------+
+| TITLEID | TITLE                | PUBID | SUBID | PUBDATE    | COVER | PRICE |
++---------+----------------------+-------+-------+------------+-------+-------+
+|    1001 | ASP.NET UNLEASHED    |     4 | ASP   | 2012-03-02 | P     |   540 |
+|    1002 | ORACLE10G COMP. REF. |     3 | ORA   | 0001-03-05 | P     |   575 |
+|    1003 | MASTERING EJB        |     1 | JEE   | 0003-02-05 | P     |   475 |
+|    1004 | JAVA COMP. REF       |     3 | JAVA  | 0003-04-05 | P     |   499 |
+|    1005 | PRO. VB.NET          |     2 | VB    | 2015-06-05 | P     |   450 |
++---------+----------------------+-------+-------+------------+-------+-------+
+5 rows in set (0.00 sec)

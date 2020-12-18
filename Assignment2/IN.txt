@@ -1,0 +1,10 @@
+IN
+
+mysql> SELECT * FROM PUBLISHERS WHERE PNAME IN('TECHMEDIA','WROX');
++-------+-----------+---------------------+----------------+
+| PUBID | PNAME     | EMAIL               | PHONE          |
++-------+-----------+---------------------+----------------+
+|     2 | WROX      | INFO@WROX.COM       | NULL           |
+|     4 | TECHMEDIA | BOOKS@TECHMEDIA.COM | 91-11-33257660 |
++-------+-----------+---------------------+----------------+
+2 rows in set (0.01 sec)

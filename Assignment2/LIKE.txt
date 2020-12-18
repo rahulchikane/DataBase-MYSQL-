@@ -1,0 +1,47 @@
+LIKE 
+
+mysql> SELECT* FROM SUBJECTS WHERE SNAME='ORACL%;
++-------+---------------------+
+| SUBID | SNAME               |
++-------+---------------------+
+| ORA   | ORACLE DATABASE 10g |
++-------+---------------------+
+1 row in set (0.01 sec)
+==========================
+2).
+mysql> SELECT SNAME FROM SUBJECTS WHERE SNAME LIKE 'J%';
++------------------------+
+| SNAME                  |
++------------------------+
+| JAVA LANGUAGE          |
+| JAVA ENTEPRISE EDITION |
++------------------------+
+2 rows in set (0.09 sec)
+==========================
+mysql> SELECT* FROM SUBJECTS WHERE SNAME LIKE '%.NET';
++-------+------------------+
+| SUBID | SNAME            |
++-------+------------------+
+| VB    | VISUAL BASIC.NET |
+| ASP   | ASP.NET          |
++-------+------------------+
+2 rows in set (0.00 sec)
+==========================
+4).
+mysql> SELECT ANAME FROM AUTHORS WHERE ANAME LIKE'%ER';
++-----------------+
+| ANAME           |
++-----------------+
+| DAVAID HUNTER   |
+| STEPHEN WALTHER |
++-----------------+
+2 rows in set (0.00 sec)
+==========================
+5).
+mysql> SELECT PNAME FROM PUBLISHERS WHERE PNAME LIKE'%HILL';
++------------------+
+| PNAME            |
++------------------+
+| TATA MCGRAW-HILL |
++------------------+
+1 row in set (0.10 sec)

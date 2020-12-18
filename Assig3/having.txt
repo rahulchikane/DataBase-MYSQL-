@@ -1,0 +1,5 @@
+-- 1. select deptid and sum of salary where sum of salary is greater than 18000 and grup by deptid. 
+select dept_id , sum(salary) from employee group by dept_id having sum(salary) > 18000;
+ 
+-- 2. select deptid and sum of salary where sum of salary is less than 20000 and grup by deptid.
+select dept_id , sum(salary) from employee group by dept_id having sum(salary) < 20000;

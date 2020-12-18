@@ -1,0 +1,34 @@
+create database emp;
+use emp;
+
+-- 1)	create table Department with dept_id(integer),dept_name(varchar(50)).
+-- dept_id will be foreign key in Employee table.
+show tables;
+create table Department (
+				dept_id int ,
+                dept_name varchar(50)
+);
+
+insert into department values (1	,	"Finance");
+insert into department values (2	,	"Training");
+insert into department values (3	,   "Marketing");
+select * from depARTMENT;
+alter table department add primary key (dept_id);
+
+create table employee(
+				empid int	,
+                emp_name varchar(20),
+                dept_id	int ,
+                salary	float,
+                manager char(30) ,
+                constraint dept_id_fk foreign key (dept_id) references department (dept_id)
+);
+
+insert into employee values(1 ,	"Arun"	,	1	,	8000	, 4);
+insert into employee values(2 ,	"kiran"	,	1	,	7000	, 1);
+insert into employee values(3	,"Scott",	1   ,	3000	, 1);
+insert into employee values(4	,"Max"	,	2	,   9000	, null);
+insert into employee values(5	,"Jack"	,	2	,   8000    , 4);
+insert into employee values(6	,"King"	, null  ,   6000   ,1);
+select * from employee;
+

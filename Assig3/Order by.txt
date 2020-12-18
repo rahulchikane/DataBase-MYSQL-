@@ -1,0 +1,6 @@
+-- 1. select all from employee sort ascending by employee name.
+select * from employee order by emp_name asc;
+select * from employee order by emp_name ;
+
+-- 2. select all from department sort descending by department name
+select * from department order by dept_name desc;
